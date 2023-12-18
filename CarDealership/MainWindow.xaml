@@ -1,0 +1,53 @@
+﻿<Window x:Class="CarDealership.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarDealership"
+        mc:Ignorable="d"
+        Title="Автосалон" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#A52A2A"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="334"/>
+            <RowDefinition>
+            </RowDefinition>
+            <RowDefinition Height="0*">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100">
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/image.jpg"/>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,0,0,64">
+            <Button Content="Покупатели" Click="Button_Click" Height="30"/>
+            <Button Content="Марки" Click="Button_Click_1" Height="30"/>
+            <Button Content="Сотрудники" Click="Button_Click_2" Height="30"/>
+            <Button Content="Автомобили" Click="Button_Click_3" Height="30"/>
+            <Button Content="Продажи" Click="Button_Click_4" Height="30"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <TextBlock Text="Автосалон" Grid.Row="0" Grid.Column="1" FontSize="20" HorizontalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center">
+                <TextBox Width="200" Height="25" FontSize="18"/>
+                <Button Content="Поиск" Width="75" Height="25"/>
+                <Button Content="Добавить" Width="75" Height="25"/>
+            </TextBlock>
+        </StackPanel>
+        <Frame x:Name="Frame" Grid.Column="1" Height="371" VerticalAlignment="Top" Grid.RowSpan="3" Margin="0,63,0,0"/>
+    </Grid>
+</Window>
